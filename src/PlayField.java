@@ -5,7 +5,7 @@ import java.util.*;
  */
 public class PlayField {
 
-    public String [] [] massPlayField() {
+    public String [] [] massPlayField() {  //Массив игрового поля
         String [] [] mass = {
                      {" "," "," "," "," ","0"," "," "," "," ","1"," "," "," "," ","2"," "," "," "," ","3"," "," "," "," ","4"," "," "," "," ","5"," "," "," "," ","6"," "," "," "," ","7"," "," "," "," ","8"," "," "," "," ","9"," "," "," "},
                      {" "," "," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," ","-","-","-","-"," "," "},
@@ -33,7 +33,7 @@ public class PlayField {
         return mass;
 
     }
-    public void printPlayField(String [] [] mass) {
+    public void printPlayField(String [] [] mass) { //Печать массива
         for ( int i = 0; i < mass.length; i++) {
             for (int j = 0; j < mass [i].length; j ++) {
                 System.out.print((char)27 + "[1;34m" +  mass[i][j] +  (char)27 + "[0m");

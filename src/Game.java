@@ -2,7 +2,7 @@
  * Created by capt on 23.01.17.
  */
 public class Game {
-    public String [] [] moveMass( String [] [] massLogic, String [] [] massField) {
+    public String [] [] moveMass( String [] [] massLogic, String [] [] massField) { //Перенос массива логики в массив игрового поля
         for ( int i = 0; i < massLogic.length; i++) {
             for (int j = 0; j < massLogic [i].length; j ++) {
                 if (massLogic [i] [j] != "x" & massLogic [i] [j] != "o" )
@@ -13,7 +13,7 @@ public class Game {
         return massField;
     }
 
-    public String [] [] searchFox(String [] [] mass, int y, int x) {
+    public String [] [] searchFox(String [] [] mass, int y, int x) { //Поиск лис по направлениям
         int num = 0;
         if (mass [y] [x] == "x") {
             mass [y] [x] = "X";
