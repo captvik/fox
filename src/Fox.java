@@ -14,8 +14,7 @@ public class Fox {
         String [] [] massField = pole.massPlayField();
         String [] [] massLogic  = play.massRandom(play.logic);
 
-        //pole.printPlayField(mass);
-        //play.massPrint(massLogic);
+
         massField = game.moveMass(massLogic, massField);
         pole.printPlayField(massField);
 
