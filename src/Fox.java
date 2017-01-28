@@ -19,7 +19,7 @@ public class Fox {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); //Ввод с клавиатуры
 
         boolean isExit = false;
-        while (!isExit) {               //Организуем игровой цикл (пока isExit не будет тавняться "exit")
+        while (!isExit) {               //Организуем игровой цикл (пока isExit не будет равняться "exit")
             System.out.println("Введите координаты поля в виде yx или exit для выхода : ");
             String yx = reader.readLine();
             isExit = yx.equals("exit");
