@@ -20,12 +20,5 @@ public class PlayLogic {
        }
        return mass;
     }
-    public void massPrint(String [] [] mass) {
-        for ( int i = 0; i < mass.length; i++) {
-            for (int j = 0; j < mass [i].length; j ++) {
-                System.out.print((char)27 + "[31m" +  mass[i][j] +  (char)27 + "[0m");
-            }
-            System.out.println();
-        }
-    }
+
 }
