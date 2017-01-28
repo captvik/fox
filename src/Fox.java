@@ -26,7 +26,7 @@ public class Fox {
             String yx = reader.readLine();
             isExit = yx.equals("exit");
             if (yx.length() == 2) {
-                //System.out.println(yx.substring(0,0));
+
                 int y = Integer.parseInt(yx.substring(0, 1));
                 int x = Integer.parseInt(yx.substring(1, 2));
 
