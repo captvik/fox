@@ -7,7 +7,7 @@ import java.math.*;
 public class Fox {
     public static void main (String [] args) throws Exception {
 
-        PlayField pole = new PlayField(); //Создаём объекты классов.
+        PlayField pole = new PlayField(); //Создаём объекты классов!!!!
         PlayLogic play = new PlayLogic();
         Game game = new Game();
 
