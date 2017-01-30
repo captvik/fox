@@ -36,7 +36,12 @@ public class PlayField {
     public void printPlayField(String [] [] mass) { //Печать массива
         for ( int i = 0; i < mass.length; i++) {
             for (int j = 0; j < mass [i].length; j ++) {
-                System.out.print((char)27 + "[1;34m" +  mass[i][j] +  (char)27 + "[0m");
+                if (mass [i] [j].equals("X"))
+                    System.out.print((char) 27 + "[1;31m" + mass[i][j] + (char) 27 + "[0m");
+                else if (mass [i] [j].equals("O"))
+                    System.out.print((char)27 + "[1;37m" +  mass[i][j] +  (char)27 + "[0m");
+                else
+                    System.out.print((char)27 + "[1;34m" +  mass[i][j] +  (char)27 + "[0m");
             }
             System.out.println();
         }
