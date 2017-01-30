@@ -26,7 +26,7 @@ public class Game {
                     numx++;
                 else if (mass [y] [j] == "X")
                     numX++;
-                else if (check == 1)
+                else if (check == 1 & mass [y] [j] == "o")
                     mass [y] [j] = "O";
             }
             //Поиск по вертикали
@@ -35,7 +35,7 @@ public class Game {
                     numx++;
                 else if (mass [i] [x] == "X")
                     numX++;
-                else if (check == 1)
+                else if (check == 1 & mass [i] [x] == "o")
                     mass [i] [x] = "O";
             }
             //Поиск по диагонали \
@@ -53,7 +53,7 @@ public class Game {
                     numx++;
                 else if (mass [i] [jMin1] == "X")
                     numX++;
-                else if (check == 1)
+                else if (check == 1 & mass [i] [jMin1] == "o")
                     mass [i] [jMin1] = "O";
                 jMin1++;
             }
@@ -73,12 +73,15 @@ public class Game {
                     numx++;
                 else if (mass [i] [jMin2] == "X")
                     numX++;
-                else if (check == 1)
+                else if (check == 1 & mass [i] [jMin2] == "o")
                     mass [i] [jMin2] = "O";
                 jMin2--;
             }
 
-            mass [y] [x] = Integer.toString(numx + numX);
+            if (numx == 0 & check == 0)
+                mass [y] [x] = Integer.toString(numx);
+            else
+                mass [y] [x] = Integer.toString(numx +numX);
 
         }
 
