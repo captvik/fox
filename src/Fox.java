@@ -18,6 +18,8 @@ public class Fox {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); //Ввод с клавиатуры
 
+        int num = 1;
+        int numX = 0;
         boolean isExit = false;
         while (!isExit) {               //Организуем игровой цикл (пока isExit не будет равняться "exit")
             System.out.println("Введите координаты поля в виде yx или exit для выхода : ");
@@ -32,7 +34,12 @@ public class Fox {
                 if (massLogic [y] [x].equals("0"))
                     massLogic = game.searchFox(massLogic, y, x, 1);
 
+                if (massLogic [y] [x].equals("X"))
+                    numX++;
+
                 pole.printPlayField(game.moveMass(massLogic, massField)); //Печатаем игровое поле
+
+                System.out.println("Число ходов: " + num++ + "     Колличество найденных лис: " + numX);
 
             }
             else if (!isExit)
