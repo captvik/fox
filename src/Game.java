@@ -13,23 +13,30 @@ public class Game {
         return massField;
     }
 
-    public String [] [] searchFox(String [] [] mass, int y, int x) { //Поиск лис по направлениям
-        int num = 0;
+    public String [] [] searchFox(String [] [] mass, int y, int x, int check) { //Поиск лис по направлениям
+        int numx = 0;
+        int numX = 0;
         if (mass [y] [x] == "x") {
             mass [y] [x] = "X";
         }
         else {
             //Поиск по горизонтали
             for (int j = 0; j < 10; j++) {
-                if (mass [y] [j] == "x" | mass [y] [j] == "X")
-                    num++;
-                //mass [y] [j] = "!";
+                if (mass [y] [j] == "x")
+                    numx++;
+                else if (mass [y] [j] == "X")
+                    numX++;
+                else if (check == 1)
+                    mass [y] [j] = "O";
             }
             //Поиск по вертикали
             for (int i = 0; i < 10; i++) {
-                if (mass [i] [x] == "x" | mass [i] [x] == "X")
-                    num++;
-                //mass [i] [x] = "!";
+                if (mass [i] [x] == "x")
+                    numx++;
+                else if (mass [i] [x] == "X")
+                    numX++;
+                else if (check == 1)
+                    mass [i] [x] = "O";
             }
             //Поиск по диагонали \
             int iMin1 = y - x;
@@ -42,9 +49,12 @@ public class Game {
                 if (iMax1 > 9)
                     iMax1 = 9;
             for (int i = iMin1; i < iMax1 + 1; i++) {
-                if (mass [i] [jMin1] == "x" | mass [i] [jMin1] == "X")
-                    num++;
-                //mass [i] [jMin1] = "!";
+                if (mass [i] [jMin1] == "x")
+                    numx++;
+                else if (mass [i] [jMin1] == "X")
+                    numX++;
+                else if (check == 1)
+                    mass [i] [jMin1] = "O";
                 jMin1++;
             }
 
@@ -59,13 +69,16 @@ public class Game {
             if (iMax2 > 9)
                 iMax2 = 9;
             for (int i = iMin2; i < iMax2 + 1; i++) {
-                if (mass [i] [jMin2] == "x" | mass [i] [jMin2] == "X")
-                    num++;
-                //mass [i] [jMin2] = "!";
+                if (mass [i] [jMin2] == "x")
+                    numx++;
+                else if (mass [i] [jMin2] == "X")
+                    numX++;
+                else if (check == 1)
+                    mass [i] [jMin2] = "O";
                 jMin2--;
             }
 
-            mass [y] [x] = Integer.toString(num);
+            mass [y] [x] = Integer.toString(numx + numX);
 
         }
 

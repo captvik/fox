@@ -28,7 +28,7 @@ public class Fox {
                 int y = Integer.parseInt(yx.substring(0, 1)); //Первый символ строки в число
                 int x = Integer.parseInt(yx.substring(1, 2)); //Второй символ строки в число
 
-                massLogic = game.searchFox(massLogic, y, x);  //В массив логики число лис в заданных координатах
+                massLogic = game.searchFox(massLogic, y, x, 0);  //В массив логики число лис в заданных координатах
                 pole.printPlayField(game.moveMass(massLogic, massField)); //Печатаем игровое поле
 
             }
